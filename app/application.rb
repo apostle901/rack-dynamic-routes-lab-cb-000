@@ -21,12 +21,4 @@ class Application
     end
     resp.finish
   end
-
-  def handle_search(item)
-    if @@items.include?(item)
-      return "#{search_term} is one of our items"
-    else
-      return "Couldn't find #{search_term}"
-    end
-  end
 end
