@@ -9,6 +9,7 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
       obj = @@items.select{|baj| baj.name == item_name}
+      obj = obj.first
       if obj
         resp.write "#{obj.name} - #{obj.price}"
       else
