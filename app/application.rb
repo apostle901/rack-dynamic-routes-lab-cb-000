@@ -12,7 +12,7 @@ class Application
         resp.write "#{}"
       end
     else
-      resp.write "Path Not Found"
+      resp.write "Route not found"
       resp.status = 404
     end
     resp.finish
