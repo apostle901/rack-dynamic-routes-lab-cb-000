@@ -10,6 +10,7 @@ class Application
       item_name = req.path.split("/items/").last
       if @@items.name.include? (item_name)
         resp.write "#{}"
+      end
     else
       resp.write "Path Not Found"
       resp.status = 404
