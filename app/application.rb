@@ -8,8 +8,12 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      if @@items.name.include? (item_name)
-        resp.write "#{}"
+      obj = @@items.select{|baj| baj.name == item_name}
+      if obj
+        resp.write "#{obj.name} - #{obj.price}"
+      else
+        resp.write "not here"
+        resp.status = 400
       end
     else
       resp.write "Route not found"
